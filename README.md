@@ -14,7 +14,8 @@ this program should be usefull for iranian 7 grade students
 سپس عدد عرض مبدا را وارد کنید و اینتر بزنید.
 
 مانند مثال زیر:
-'''
+
+```
 lotfan tool mabda ra vared konid: 2
 lotfan arz mabda ra vared konid: 1
-'''
+```
