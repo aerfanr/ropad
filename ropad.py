@@ -1,7 +1,5 @@
 # به نام خداوند ویروس گارد
 
-# about:
-#   developed by aer
 
 import matplotlib.pyplot as plt
 import methods as m
