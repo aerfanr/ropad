@@ -68,7 +68,12 @@ while 1:
         else:
             if i == "(" or i == ")":
                 continue
-            _num = _num + i
+            elif i in _codeS.keys():
+                _string = _string.replace(i, _codeS[i])
+                print(_codeS[i])
+                print(_string)
+            else:
+                _num = _num + i
 
     plt.plot(_widthS, _heightS, rC[rN] + "-o")
     rN += 1
