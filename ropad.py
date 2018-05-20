@@ -7,7 +7,17 @@ import methods as m
 while 1:
     _orgX = input("lotfan tool mabda ra vared konid: ")
     _orgY = input("lotfan arz mabda ra vared konid: ")
-    _string = input("code ra vared konid: ")
+
+    _codeS = {}
+    while 1:
+        _temp = input("dar soorat tamayol be vared kardan dastoor tarkibi, name dastoor ra vared konid: \n "
+                      "1:namikhaham dastoor jadid vared konam. \n")
+        if _temp == "1":
+            break
+        else:
+            _codeS[_temp] = input("code dastoor tarkibi ra vared konid: ")
+
+    _string = input("code dastoor asli ra vared konid: ")
 
     _width = int(_orgX)
     _height = int(_orgY)
