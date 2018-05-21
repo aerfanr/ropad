@@ -9,14 +9,14 @@ def flash(w, h, n, a, b):
                      xy=(w, h + int(n)), xycoords='data',
                      xytext=(w, h), textcoords='data',
                      arrowprops=dict(arrowstyle="simple",
-                                     connectionstyle="arc3"),
+                                     connectionstyle="arc3", color="red"),
                      )
     if b == 2:
         plt.annotate("",
                      xy=(w + int(n), h), xycoords='data',
                      xytext=(w, h), textcoords='data',
                      arrowprops=dict(arrowstyle="simple",
-                                     connectionstyle="arc3"),
+                                     connectionstyle="arc3", color="red"),
                      )
 
 
@@ -35,7 +35,9 @@ class RopadCompiler:
         _STRC = ""
         for _D in self.STR:
             if _D in self.codeS.keys():
-                _STRC = _STRC + self.codeS[_D]
+                if self.NUM == "0":
+                    self.NUM = "1"
+                _STRC = _STRC + self.codeS[_D] * int(self.NUM)
             elif _D in self.NUMS:
                 self.NUM = self.NUM + _D
             elif _D == '(' or _D == ')':
