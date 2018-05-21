@@ -20,6 +20,10 @@ def flash(w, h, n, a, b):
                      )
 
 
+def line():
+    print("-----------------------------------------------------")
+
+
 class RopadCompiler:
     def __init__(self):
         self.STR = ""

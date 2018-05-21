@@ -8,20 +8,25 @@ import methods as m
 while 1:
     # دریافت مبدا
     _orgX = input("lotfan tool mabda ra vared konid: ")
+    m.line()
     _orgY = input("lotfan arz mabda ra vared konid: ")
+    m.line()
 
     # دریافت دستور های ترکیبی
     _codeS = {}
     while 1:
         _temp = input("dar soorat tamayol be vared kardan dastoor tarkibi, name dastoor ra vared konid: \n "
                       "1:namikhaham dastoor jadid vared konam. \n")
+        m.line()
         if _temp == "1":
             break
         else:
             _codeS[_temp] = input("code dastoor tarkibi ra vared konid: ")
+            m.line()
 
     # دریافت دستور های اصلی
     _string = input("code dastoor asli ra vared konid: ")
+    m.line()
 
     # تعریف متغیر های اولیه
     _width = int(_orgX)
@@ -87,9 +92,11 @@ while 1:
     print(_widthS)
     print(_heightS)
     plt.text(_width, _height, r'$\vert\stackrel{%d}{%d}$' % (_width, _height))
+    m.line()
 
     # روپاد جدید
     a = input("ropad jadid mikhahid? \n 1:bale  2:kheir")
+    m.line()
     if a == "2":
         break
 # نمایش پلات
