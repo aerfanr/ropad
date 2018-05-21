@@ -4,10 +4,13 @@
 import matplotlib.pyplot as plt
 import methods as m
 
+# چرخه ی ورود روپاد
 while 1:
+    # دریافت مبدا
     _orgX = input("lotfan tool mabda ra vared konid: ")
     _orgY = input("lotfan arz mabda ra vared konid: ")
 
+    # دریافت دستور های ترکیبی
     _codeS = {}
     while 1:
         _temp = input("dar soorat tamayol be vared kardan dastoor tarkibi, name dastoor ra vared konid: \n "
@@ -17,14 +20,25 @@ while 1:
         else:
             _codeS[_temp] = input("code dastoor tarkibi ra vared konid: ")
 
+    # دریافت دستور های اصلی
     _string = input("code dastoor asli ra vared konid: ")
 
+    # تعریف متغیر های اولیه
     _width = int(_orgX)
     _height = int(_orgY)
     _heightS = [_height]
     _widthS = [_width]
     _num = "0"
 
+    # ساده کردن دستور وارد شده
+    RC = m.RopadCompiler
+    RC.STR = _string
+    RC.codeS = _codeS
+    RC.NUMS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    RC.NUM = "0"
+    _string = RC.compile(RC)
+
+    # محاسبه و رسم بردار ها
     for i in _string:
         if i == "N":
             if _num == "0":
@@ -63,25 +77,20 @@ while 1:
             _heightS.append(_height)
             _widthS.append(_width)
             continue
-        else:
-            if i == "(" or i == ")":
-                continue
-            elif i in _codeS.keys():
-                _string = _string.replace(i, _codeS[i])
-                print(_codeS[i])
-                print(_string)
-            else:
-                _num = _num + i
 
+    # رسم مسیر اصلی
     plt.plot(_widthS, _heightS)
 
+    # خروجی مختصات
     print(_width)
     print(_height)
     print(_widthS)
     print(_heightS)
     plt.text(_width, _height, r'$\vert\stackrel{%d}{%d}$' % (_width, _height))
 
+    # روپاد جدید
     a = input("ropad jadid mikhahid? \n 1:bale  2:kheir")
     if a == "2":
         break
+# نمایش پلات
 plt.show()
