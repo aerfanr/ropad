@@ -24,14 +24,12 @@ while 1:
     _heightS = [_height]
     _widthS = [_width]
     _num = "0"
-    rN = 0
-    rC = ["r", "b", "g", "y", "p"]
 
     for i in _string:
         if i == "N":
             if _num == "0":
                 _num = 1
-            m.flash(_width, _height, _num, 1, 1, rC, rN)
+            m.flash(_width, _height, _num, 1, 1)
             _height += 1 * int(_num)
             _num = "0"
 
@@ -41,7 +39,7 @@ while 1:
         if i == "S":
             if _num == "0":
                 _num = 1
-            m.flash(_width, _height, _num, 0, 1, rC, rN)
+            m.flash(_width, _height, _num, 0, 1)
             _height -= 1 * int(_num)
             _num = "0"
             _heightS.append(_height)
@@ -50,7 +48,7 @@ while 1:
         if i == "W":
             if _num == "0":
                 _num = 1
-            m.flash(_width, _height, _num, 0, 2, rC, rN)
+            m.flash(_width, _height, _num, 0, 2)
             _width -= 1 * int(_num)
             _num = "0"
             _heightS.append(_height)
@@ -59,7 +57,7 @@ while 1:
         if i == "E":
             if _num == "0":
                 _num = 1
-            m.flash(_width, _height, _num, 1, 2, rC, rN)
+            m.flash(_width, _height, _num, 1, 2)
             _width += 1 * int(_num)
             _num = "0"
             _heightS.append(_height)
@@ -75,8 +73,7 @@ while 1:
             else:
                 _num = _num + i
 
-    plt.plot(_widthS, _heightS, rC[rN] + "-o")
-    rN += 1
+    plt.plot(_widthS, _heightS)
 
     print(_width)
     print(_height)
